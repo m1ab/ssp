@@ -1,9 +1,14 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>ru.lumo.ssp</groupId>
-    <artifactId>ssp</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>ssp-parent</artifactId>
+    <packaging>pom</packaging>
     <version>1.1-SNAPSHOT</version>
+
+    <modules>
+        <module>ssp-core</module>
+    </modules>
 
     <name>SSP - Spreadsheet Parser</name>
     <url>http://ssp.lu-mo.ru</url>
@@ -70,8 +75,8 @@
 
     <scm>
         <connection>scm:git:https://github.com/m1ab/ssp.git</connection>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <distributionManagement>
         <repository>
