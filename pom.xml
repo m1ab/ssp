@@ -69,6 +69,10 @@
         </dependency>
     </dependencies>
 
+    <scm>
+        <connection>scm:git:https://github.com/m1ab/ssp.git</connection>
+    </scm>
+
     <distributionManagement>
         <repository>
             <id>third-party-releases</id>
