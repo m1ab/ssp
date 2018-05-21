@@ -69,6 +69,17 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>third-party-releases</id>
+            <url>http://dev.rbtechnologies.ru:8081/artifactory/third-party/</url>
+        </repository>
+        <snapshotRepository>
+            <id>third-party-snapshots</id>
+            <url>http://dev.rbtechnologies.ru:8081/artifactory/third-party/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <resources>
             <resource>
