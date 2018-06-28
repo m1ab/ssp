@@ -6,7 +6,7 @@
 
 * Spreadsheet Parser Core Library  
 * Version 1.1 (Latest Release)  
-* Developer version 1.1-SNAPSHOT  
+* Developer version 1.2-SNAPSHOT
 * http://ssp.lu-mo.ru  
 
 
@@ -48,10 +48,11 @@ cd -
     };
     
     public void parse() throws Exception {
-        SpreadsheetParser parser = new OdsParser();
+        OdsParser parser = new OdsParser();
         parser.setConfig(config); // Data types by columns
         parser.setStartRow(1); // Number of row to be skipped
-        parser.setQueue(queue); // Queue which would recieve parsing messages by parsed row, to be assynchronously handled
+        parser.setQueue(queue); // Queue which would recieve parsing messages by parsed row, to be asynchronously handled
+        parser.setSheetIndex(1); // Use for multi sheet documents. Skip if one sheet available or CSV document. Default index is 0 (zero)
         List<List> data; // Result List of List of Objects
         data = parser.parse(this.getClass().getResourceAsStream("myfile.ods"));
         for (List row : data) {

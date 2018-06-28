@@ -2,6 +2,7 @@ package ru.lumo.ssp.parser;
 
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
+import ru.lumo.ssp.api.Multisheet;
 import ru.lumo.ssp.api.SpreadsheetParseException;
 import ru.lumo.ssp.util.PoiUtils;
 
@@ -15,7 +16,9 @@ import java.util.List;
  * <p>
  * Created by misha on 01.01.2017.
  */
-public abstract class AbstractPoiParser extends AbstractParser<Row> {
+public abstract class AbstractPoiParser extends AbstractParser<Row> implements Multisheet {
+
+    protected int sheetIndex = 0;
 
     private List<Class> config;
 
@@ -30,7 +33,7 @@ public abstract class AbstractPoiParser extends AbstractParser<Row> {
     }
 
     protected Iterator<Row> getIterator(Workbook workbook) throws Exception {
-        Iterator<Row> it = PoiUtils.iterator(workbook);
+        Iterator<Row> it = PoiUtils.iterator(workbook, sheetIndex);
         if (it == null) {
             post("ERROR! input rows not found");
             throw new SpreadsheetParseException("ERROR! input rows not found");
@@ -69,4 +72,10 @@ public abstract class AbstractPoiParser extends AbstractParser<Row> {
 //        }
 //        return list;
 //    }
+
+
+    @Override
+    public void setSheetIndex(int sheetIndex) {
+        this.sheetIndex = sheetIndex;
+    }
 }
