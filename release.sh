@@ -1,6 +1,4 @@
 #!/bin/bash
 
-mvn release:clean
-mvn release:prepare
-mvn release:perform
+mvn release:clean && mvn release:prepare && mvn release:perform
 
