@@ -3,7 +3,7 @@
     <groupId>ru.lumo.ssp</groupId>
     <artifactId>ssp-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
 
     <modules>
         <module>ssp-core</module>
@@ -74,7 +74,7 @@
 
     <scm>
         <connection>scm:git:https://github.com/m1ab/ssp.git</connection>
-        <tag>HEAD</tag>
+        <tag>ssp-1.2</tag>
     </scm>
 
     <distributionManagement>
