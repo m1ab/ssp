@@ -2,6 +2,7 @@ package ru.lumo.ssp.parser;
 
 import org.odftoolkit.simple.Document;
 import org.odftoolkit.simple.table.Row;
+import ru.lumo.ssp.api.Multisheet;
 import ru.lumo.ssp.api.SpreadsheetParseException;
 import ru.lumo.ssp.util.OdfUtils;
 
@@ -15,7 +16,9 @@ import java.util.List;
  * <p>
  * Created by misha on 01.01.2017.
  */
-public abstract class AbstractOdfParser extends AbstractParser<Row> {
+public abstract class AbstractOdfParser extends AbstractParser<Row> implements Multisheet {
+
+    protected int sheetIndex = 0;
 
     private List<Class> config;
 
@@ -30,7 +33,7 @@ public abstract class AbstractOdfParser extends AbstractParser<Row> {
     }
 
     protected Iterator<Row> getIterator(Document document) throws Exception {
-        Iterator<Row> it = OdfUtils.iterator(document);
+        Iterator<Row> it = OdfUtils.iterator(document, sheetIndex);
         if (it == null) {
             post("ERROR! input rows not found");
             throw new SpreadsheetParseException("ERROR! input rows not found");
@@ -57,5 +60,10 @@ public abstract class AbstractOdfParser extends AbstractParser<Row> {
                 throw new SpreadsheetParseException("ERROR! line " + (lineIndex + 1) + ", " + e.getMessage(), e);
             }
         }
+    }
+
+    @Override
+    public void setSheetIndex(int sheetIndex) {
+        this.sheetIndex = sheetIndex;
     }
 }

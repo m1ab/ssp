@@ -39,8 +39,12 @@ public abstract class AbstractSpreadsheetTest {
         return DEFAULT_CONFIG;
     }
 
+    protected String getResource() {
+        return "spreadsheet";
+    }
+
     protected InputStream getInputStream() {
-        InputStream resourceAsStream = this.getClass().getClassLoader().getResourceAsStream("spreadsheet." + getFormat());
+        InputStream resourceAsStream = this.getClass().getClassLoader().getResourceAsStream(getResource() + "." + getFormat());
         Assert.assertNotNull(resourceAsStream);
         return resourceAsStream;
     }

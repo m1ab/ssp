@@ -18,8 +18,12 @@ import java.util.List;
  */
 public class PoiUtils {
 
-    public static Iterator<Row> iterator(Workbook workbook) throws Exception {
-        Sheet sheet = workbook.getSheetAt(0);
+//    public static Iterator<Row> iterator(Workbook workbook) throws Exception {
+//        return iterator(workbook, 0);
+//    }
+
+    public static Iterator<Row> iterator(Workbook workbook, int sheetIndex) throws Exception {
+        Sheet sheet = workbook.getSheetAt(sheetIndex);
         if (sheet == null) return null;
         return sheet.iterator();
     }

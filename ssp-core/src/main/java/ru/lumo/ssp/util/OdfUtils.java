@@ -20,10 +20,14 @@ import java.util.List;
  */
 public class OdfUtils {
 
-    public static Iterator<Row> iterator(Document document) throws Exception {
+//    public static Iterator<Row> iterator(Document document) throws Exception {
+//        return iterator(document, 0);
+//    }
+
+    public static Iterator<Row> iterator(Document document, int sheetIndex) throws Exception {
         List<Table> tableList = document.getTableList();
-        if (tableList == null || tableList.isEmpty() || tableList.get(0) == null) return null;
-        return tableList.get(0).getRowIterator();
+        if (tableList == null || tableList.isEmpty() || tableList.get(sheetIndex) == null) return null;
+        return tableList.get(sheetIndex).getRowIterator();
     }
 
     public static List parseRow(Row row, List<Class> config) throws SpreadsheetParseException {
