@@ -5,7 +5,7 @@
 ### What is this repository for? ###
 
 * Spreadsheet Parser Core Library  
-* Version 1.1 (Latest Release)  
+* Version 1.2 (Latest Release)
 * Developer version 1.2-SNAPSHOT
 * http://ssp.lu-mo.ru  
 
