@@ -66,6 +66,6 @@ cd -
 
 ### Who do I talk to? ###
 
-* For any question feel free to contact Misha github16@lu-mo.ru  
+* For any question feel free to contact Misha rasrab@mizhgan.com  
 
-* My linkedin profile: https://www.linkedin.com/in/mikhail-kryukov-8a2199119  
+* My site: http://mizhgan.com  
